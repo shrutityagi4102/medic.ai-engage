@@ -5,6 +5,10 @@ As part of Microsoft Engage's Facial Recognition track I have made a website whi
 
 Challenge Chosen : Face Recognition
 
+Video Demo : https://www.youtube.com/watch?v=W_ANqtxrTzw
+
+PPT and System Architecture : https://drive.google.com/drive/folders/13dEB3v1qiVEn_4SpL__GhXjHDj73Idcz?usp=sharing
+
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Aim](#aim)
