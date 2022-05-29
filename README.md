@@ -9,7 +9,6 @@ Challenge Chosen : Face Recognition
 - [Table of Contents](#table-of-contents)
 - [Aim](#aim)
 - [Tech Stack](#tech-stack)
-- [System Architecture](#system-architecture)
 - [Features](#features)
 
 ## Aim
@@ -24,9 +23,6 @@ The process was both long and arduous but unmistakably fruitful. When I started 
 * For Face recognition: Face-API that's wrapped with Tensorflow and OpenCV For Speech : Web Speech API
 * For Medical Information : Infermedica-API and MediaWiki
 * Middleware: Node.js and express
-
-## System Architecture
-![](Medic.AI System Archi.png)
 
 ## Features
 
