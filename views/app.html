@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="text-center">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MEDIC.AI</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/application/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="application/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="application/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="application/assets/css/Features-Boxed.css">
+    <link rel="stylesheet" href="application/assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="application/assets/css/Header-Blue.css">
+    <link rel="stylesheet" href="application/assets/css/Header-Dark.css">
+    <link rel="stylesheet" href="application/assets/css/Highlight-Phone.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="application/assets/css/styles.css">
+    <link rel="stylesheet" href="application/assets/css/Team-Boxed.css">
+    <link rel="stylesheet" href="application/assets/css/untitled.css">
+</head>
+
+<body style="overflow-x: hidden;">
+    <div>
+        <div class="header-dark" style="padding-left: 10vw;padding-right: 10vw;vertical-align: middle;">
+            <nav class="navbar navbar-light navbar-expand-md flex-grow-1 justify-content-between navigation-clean-search" data-aos="slide-down" data-aos-duration="950" data-aos-delay="300" data-aos-once="true">
+                <div class="container-fluid"><img class="img-fluid" src="/index/assets/img/logo_white_doctorai.png" width="23%"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav d-xl-flex flex-grow-1 justify-content-start">
+                            <li class="nav-item" role="presentation"><a class="nav-link" id="navitem" href="/" style="color: rgb(255,255,255); font-size: x-large;">Home</a></li>
+                        </ul><a class="btn btn-primary border rounded action-button" role="button" href="/app" style="filter: brightness(100%) saturate(100%);background-color: rgb(255,255,255);color: rgb(0,0,0);">Get Started</a></div>
+                </div>
+            </nav>
+            <div class="container-fluid text-left" data-aos="zoom-in" data-aos-duration="500" style="margin-top: 3rem;margin-bottom: 5rem;">
+                <div class="row">
+                    <div class="col rounded" style="background-color: rgb(255,255,255);">
+                        <div class="text-center" style="padding: 1rem;"><img src="application/assets/img/logo_black_doctorai.png" style="width: 35%;"></div>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center" style="background-color: rgb(206, 239, 239);">
+                    <div class="col-3 rounded" style="background-color: rgb(206, 239, 239);">
+                        <div class="text-center" style="padding: 1.5rem;">
+                            <div class="text-center">
+                                <h2 class="text-center black-text" style="padding: 0.3rem;">Instructions<br></h2>
+                                <p id="instructions" class="black-text">In this procedure, you will be able to get live results on your physical, social, emotional and mental health. Press Next to begin.</p>
+                            </div>
+                            <div class="text-center">
+                                <h2 class="text-center black-text" style="padding: 0.3rem;">Answered</h2>
+                                <p id="progress" class="black-text" style="font-size: 1.5rem;">0/6</p>
+                            </div>
+                            <div class="text-center">
+                                <h2 id="question-title" class="text-center black-text" style="padding: 0.3rem;"></h2>
+                                <p id="question" class="black-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9 rounded" style="background-color: white;">
+                        <div id="videodiv" class="d-xl-flex justify-content-xl-center align-items-xl-center" style="padding: 3rem;">
+                            <video hidden id="player" width="800" height="450" autoplay muted></video>
+                            <canvas id="canvas1" width="800" height="450"></canvas>
+                            <!--<video id="player" autoplay class="embed-responsive-item"></video>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col rounded" style="background-color: rgb(255,255,255);">
+                        <div class="text-center" style="padding: 1rem;">
+                            <nav class="navbar navbar-light navbar-expand-md">
+                                <div class="container-fluid">
+                                    <button id="reset" class="btn btn-primary text-right button-type" data-bs-hover-animate="pulse" type="button"><span style="font-family: &quot;poppins&quot;;">&nbsp;Reset&nbsp;</span><i class="fa fa-rotate-left"></i></button>
+                                    <button id="record" class="btn btn-primary text-right button-type" data-bs-hover-animate="pulse" type="button" style="bg-color:white"><span style="font-family: &quot;poppins&quot;;">&nbsp;Record&nbsp;</span><i class="fa fa-stop-circle"></i><button id="next-question" class="btn btn-primary text-right button-type" data-bs-hover-animate="pulse" type="button"><span style="font-family: &quot;poppins&quot;;">&nbsp;Next&nbsp;</span><i class="fa fa-play"></i></button></div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="uses" style="background: linear-gradient(45deg, rgba(255,255,255,0.8)0%, rgba(255,255,255,0.9) 50%), url(&quot;application/assets/img/bg-4.jpg&quot;);padding-left: 10vw;padding-right: 10vw;vertical-align: middle;background-size: cover;">
+        <div id="results-panel" class="container-fluid text-left" style="margin-top: 3rem;margin-bottom: 3rem;">
+        </div>
+    </div>
+    <div class="footer-dark" style="padding-left: 15vw;padding-right: 15vw;">
+        <footer>
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="text-center" data-aos="flip-up" data-aos-duration="950" id="mainhead" style="margin-top: 3rem!important;margin-bottom: 3rem!important;">Stay Healthy ! Stay Safe &lt;3</h1>
+                    </div>
+                </div>
+                <div class="row" style=" position:relative;left:250px; ">
+                    <div class="col-sm-6 col-md-3 item ">
+                        <h3>Others</h3>
+                        <ul>
+                            <li>
+                                <a href="https://drive.google.com/file/d/1JBo2LDIM100_FrfKA6x0V9GVZEu7g5Og/view?usp=sharing">Presentation</a>
+                            </li>
+                            <li><a href="https://drive.google.com/file/d/1OZrHvTNDs_aWNdMcLujGXwhMx1Yrz_8D/view?usp=sharing ">System Architecture</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item " style=" position:relative;left:50px; ">
+                        <h3>Connect with me</h3>
+                        <ul>
+                            <li>
+                                <a href="https://www.linkedin.com/in/tyagishruti/ ">LinkedIn</a>
+                            </li>
+                            <li><a href="https://github.com/shrutityagi4102/medic.ai-engage ">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="copyright ">Shruti Tyagi - Engage</p>
+            </div>
+        </footer>
+    </div>
+    <script src="application/assets/js/jquery.min.js"></script>
+    <script src="application/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="application/assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="scripts/face-api.min.js"></script>
+    <!--<script src="scripts/face_detect.js"></script>-->
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/index.js"></script>
+</body>
+
+</html>
